@@ -1,0 +1,1071 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ClientJS Test</title>
+		
+		<script src="client.min.js"></script>
+		<style>
+	.app1 {
+		width: 300px;
+		padding: 10px;
+		border: 5px solid gray;
+		margin: 0;
+	}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+
+	<body>
+<div class="w3-container w3-teal">
+<h1>Ergebnisse von ClientJS</h1>
+
+	<div style="background-color:grey;">
+	<div class="w3-panel w3-pale-green">
+	<h2> Fingerprint Methods (Static und Custom) </h2>
+	<p>Client is:
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	if( client.isMobile() ) { // Check For Mobile Device
+
+		if( client.isMobileAndroid() ) { // Check For Android
+			document.write('We Got Us Some Android!');
+
+		}else if( client.isMobileIOS() ){ // Check For iOS
+			document.write('We Got Us Some Apple iOS!');
+
+		}else{
+			document.write('Unknown Mobile Device...');
+		}
+	}else{
+		if( client.isJava() ) { // Check If Java Is Installed
+  			document.write('Java ' + client.getJavaVersion() ); // Get Java Version
+
+		}else{
+			document.write('No Java Installed...');
+		}
+	}
+
+	</script>
+	</p>
+
+	
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var fingerprint1 = client.getFingerprint(); // Calculate Device/Browser Fingerprint 
+
+	</script>
+	<p>
+      fingerprint (static) ID is:
+      <script type="text/javascript">
+        document.write(fingerprint1)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+	var osVersion = client.getOSVersion(); 
+	var CPU = client.getCPU();
+	
+	var fingerprint = client.getCustomFingerprint(osVersion, CPU); // define points for custom fingerprint
+
+	console.log( fingerprint );
+
+	</script>
+	<p>
+      fingerprint (custom - here: OS Version, CPU) ID is:
+      <script type="text/javascript">
+        document.write(fingerprint)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var softwareVersion = client.getSoftwareVersion(); // Get ClientJS Software Version
+
+	console.log( softwareVersion );
+	
+	</script>	
+	<p>
+      Software Version (ClientJS) is:
+      <script type="text/javascript">
+        document.write(softwareVersion)
+      </script>
+    </p>
+	</div>
+<div class="w3-panel w3-pale-green">
+	<h3>User Agent Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var userAgent = client.getUserAgent(); // Get User Agent String
+
+	console.log( userAgent );
+	
+	</script>
+	<p>
+      UserAgent is:
+      <script type="text/javascript">
+        document.write(userAgent)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var userAgentLowerCase = client.getUserAgentLowerCase(); // Get User Agent String
+
+	console.log( userAgentLowerCase );
+
+	</script>
+	<p>
+      UserAgent lowercase is:
+      <script type="text/javascript">
+        document.write(userAgentLowerCase)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Browser Methods</h3>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var browser = client.getBrowser(); // Get Browser
+
+	console.log( browser );
+
+	</script>
+	<p>
+      Get Browser Return a string - Browser is:
+      <script type="text/javascript">
+        document.write(browser)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var browserVersion = client.getBrowserVersion(); // Get Browser Version
+
+	console.log( browserVersion );
+
+	</script>
+	<p>
+      Browser Version:
+      <script type="text/javascript">
+        document.write(browserVersion)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var browserMajorVersion = client.getBrowserMajorVersion(); // Get Browser's Major Version
+
+	console.log( browserMajorVersion );
+
+	</script>
+	<p>
+      Browser Major Version is:
+      <script type="text/javascript">
+        document.write(browserMajorVersion)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isIE = client.isIE(); // Check For IE
+
+	console.log( isIE );
+
+	</script>
+  	<p>
+      Is IE ?:
+      <script type="text/javascript">
+        document.write(isIE)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isChrome = client.isChrome(); // Check For Chrome
+
+	console.log( isChrome );
+
+	</script>
+	<p>
+      Is Chrome ?:
+      <script type="text/javascript">
+        document.write(isChrome)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isFirefox = client.isFirefox(); // Check For Firefox
+
+	console.log( isFirefox );
+
+	</script>
+	<p>
+      Is Firefox ?:
+      <script type="text/javascript">
+        document.write(isFirefox)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isSafari = client.isSafari(); // Check For Safari
+
+	console.log( isSafari );
+
+	</script>
+	<p>
+      Is Safari ?:
+      <script type="text/javascript">
+        document.write(isSafari)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isOpera = client.isOpera(); // Check For Opera
+
+	console.log( isOpera );
+
+	</script>
+	<p>
+      Is Opera ?:
+      <script type="text/javascript">
+        document.write(isOpera)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobileSafari = client.isMobileSafari(); // Check For Mobile Safari
+
+	console.log( isMobileSafari );
+
+	</script>
+	<p>
+      Is Mobile Safari ?:
+      <script type="text/javascript">
+        document.write(isMobileSafari)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Engine Methods</h3>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var engine = client.getEngine(); // Get Engine
+
+	console.log( engine );
+
+	</script>
+	<p>
+      Engine is:
+      <script type="text/javascript">
+        document.write(engine)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var engineVersion = client.getEngineVersion(); // Get Engine Version
+
+	console.log( engineVersion );
+
+	</script>
+	<p>
+      Engine Version is:
+      <script type="text/javascript">
+        document.write(engineVersion)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>OS (operating system) Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var OS = client.getOS(); // Get OS 
+
+	console.log( OS );
+
+	</script>
+  	<p>
+      OS :
+      <script type="text/javascript">
+        document.write(OS)
+      </script>
+    </p>	
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var osVersion = client.getOSVersion(); // Get OS Version
+
+	console.log( osVersion );
+
+	</script>
+	<p>
+      OS Version:
+      <script type="text/javascript">
+        document.write(osVersion)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isWindows = client.isWindows(); // Check For Windows
+
+	console.log( isWindows );
+
+	</script>
+	<p>
+      OS is Windows ?:
+      <script type="text/javascript">
+        document.write(isWindows)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMac = client.isMac(); // Check For Mac
+
+	console.log( isMac );
+
+	</script>
+	<p>
+      OS is Mac ?:
+      <script type="text/javascript">
+        document.write(isMac)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isUbuntu = client.isUbuntu(); // Check For Ubuntu
+
+	console.log( isUbuntu );
+
+	</script>
+	<p>
+      OS is Ubuntu ?:
+      <script type="text/javascript">
+        document.write(isUbuntu)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isSolaris = client.isSolaris(); // Check For Solaris
+
+	console.log( isSolaris );
+
+	</script>
+	<p>
+      OS is Solaris ?:
+      <script type="text/javascript">
+        document.write(isSolaris)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Device Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var device = client.getDevice(); // Get Device
+
+	console.log( device );
+
+	</script>
+	<p>
+      Get Device:
+      <script type="text/javascript">
+        document.write(device)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var deviceType = client.getDeviceType(); // Get Device Type
+
+	console.log( deviceType );
+
+	</script>
+	<p>
+      Device Type:
+      <script type="text/javascript">
+        document.write(deviceType)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var deviceVendor = client.getDeviceVendor(); // Get Device Vendor
+
+	console.log( deviceVendor );
+
+	</script>
+	<p>
+      Device Vendor:
+      <script type="text/javascript">
+        document.write(deviceVendor)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>CPU Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var CPU = client.getCPU(); // Get CPU Architecture
+
+	console.log( CPU );
+
+	</script>
+	<p>
+      CPU Architecture:
+      <script type="text/javascript">
+        document.write(CPU)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Mobile Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobile = client.isMobile(); // Check For Mobile
+
+	console.log( isMobile );
+
+	</script>
+	<p>
+     Is Mobile ?:
+      <script type="text/javascript">
+        document.write(isMobile)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobileMajor = client.isMobileMajor(); // Check For Mobile Major
+
+	console.log( isMobileMajor );
+
+	</script>
+	<p>
+     Mobile Major:
+      <script type="text/javascript">
+        document.write(isMobileMajor)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobileAndroid = client.isMobileAndroid(); // Check For Mobile Android
+
+	console.log( isMobileAndroid );
+
+	</script>
+	<p>
+     Is Mobile Android ?:
+      <script type="text/javascript">
+        document.write(isMobileAndroid)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobileOpera = client.isMobileOpera(); // Check For Mobile Opera
+
+	console.log( isMobileOpera );
+
+	</script>
+	<p>
+     Is Mobile Opera ?:
+      <script type="text/javascript">
+        document.write(isMobileOpera)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobileWindows = client.isMobileWindows(); // Check For Mobile Windows
+
+	console.log( isMobileWindows );
+
+	</script>
+  	<p>
+     Is Mobile Windows ?:
+      <script type="text/javascript">
+        document.write(isMobileWindows)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobileBlackBerry = client.isMobileBlackBerry(); // Check For Mobile Blackberry
+
+	console.log( isMobileBlackBerry );
+
+	</script>
+	<p>
+     Is Mobile Blackberry ?:
+      <script type="text/javascript">
+        document.write(isMobileBlackBerry)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>iOS Methods</h3>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMobileIOS = client.isMobileIOS(); // Check For Mobile iOS
+
+	console.log( isMobileIOS );
+
+	</script>
+	<p>
+     Is Mobile iOS ?:
+      <script type="text/javascript">
+        document.write(isMobileIOS)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isIphone = client.isIphone(); // Check For iPhone
+
+	console.log( isIphone );
+
+	</script>
+	<p>
+     Is iPhone ?:
+      <script type="text/javascript">
+        document.write(isIphone)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isIpad = client.isIpad(); // Check For iPad
+
+	console.log( isIpad );
+
+	</script>
+  	<p>
+     Is iPad ?:
+      <script type="text/javascript">
+        document.write(isIpad)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isIpod = client.isIpod(); // Check For iPod
+
+	console.log( isIpod );
+
+	</script>
+	<p>
+     Is iPod ?:
+      <script type="text/javascript">
+        document.write(isIpod)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Screen Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var screenPrint = client.getScreenPrint(); // Get Screen Print
+
+	console.log( screenPrint );
+
+	</script>
+	<p>
+     Screen Print:
+      <script type="text/javascript">
+        document.write(screenPrint)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var colorDepth = client.getColorDepth(); // Get Color Depth
+
+	console.log( colorDepth );
+
+	</script>
+	<p>
+     Color Depth:
+      <script type="text/javascript">
+        document.write(colorDepth)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var currentResolution = client.getCurrentResolution(); // Get Current Resolution
+
+	console.log( currentResolution );
+
+	</script>
+	<p>
+     Current Resolution:
+      <script type="text/javascript">
+        document.write(currentResolution)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var availableResolution = client.getAvailableResolution(); // Get Available Resolution
+
+	console.log( availableResolution );
+
+	</script>
+	<p>
+     Available Resolution:
+      <script type="text/javascript">
+        document.write(availableResolution)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var deviceXDPI = client.getDeviceXDPI(); // Get Device XDPI
+
+	console.log( deviceXDPI );
+
+	</script>
+	<p>
+     Device XDPI:
+      <script type="text/javascript">
+        document.write(deviceXDPI)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var deviceYDPI = client.getDeviceYDPI(); // Get Device YDPI
+
+	console.log( deviceYDPI );
+
+	</script>
+	<p>
+     Device YDPI:
+      <script type="text/javascript">
+        document.write(deviceYDPI)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Plugin Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var plugins = client.getPlugins(); // Get Plugins
+
+	console.log( plugins );
+
+	</script>
+	<p>
+     Plugins:
+      <script type="text/javascript">
+        document.write(plugins)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isJava = client.isJava(); // Check For Java
+
+	console.log( isJava );
+
+	</script>
+	<p>
+     Is Java ?:
+      <script type="text/javascript">
+        document.write(isJava)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var javaVersion = client.getJavaVersion(); // Get Java Version
+
+	console.log( javaVersion );
+
+	</script>
+	<p>
+     Java Version:
+      <script type="text/javascript">
+        document.write(javaVersion)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isFlash = client.isFlash(); // Check For Flash
+
+	console.log( isFlash );
+
+	</script>
+	<p>
+     Is Flash ?:
+      <script type="text/javascript">
+        document.write(isFlash)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var flashVersion = client.getFlashVersion(); // GET Flash Version
+
+	console.log( flashVersion );
+
+	</script>
+  	<p>
+     Flash Version:
+      <script type="text/javascript">
+        document.write(flashVersion)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isSilverlight = client.isSilverlight(); // Check For Silverlight
+
+	console.log( isSilverlight );
+
+	</script>
+	<p>
+     Is Silverlight ?:
+      <script type="text/javascript">
+        document.write(isSilverlight)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var silverlightVersion = client.getSilverlightVersion(); // GET Silverlight Version
+
+	console.log( silverlightVersion );
+
+	</script>
+	<p>
+     Silverlight Version:
+      <script type="text/javascript">
+        document.write(silverlightVersion)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Mime Type Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isMimeTypes = client.isMimeTypes(); // Check For Mime Types
+
+	console.log( isMimeTypes );
+
+	</script>
+	<p>
+     Is Mime Types ?:
+      <script type="text/javascript">
+        document.write(isMimeTypes)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var mimeTypes = client.getMimeTypes(); // Get Mime Types
+
+	console.log( mimeTypes );
+
+	</script>
+	<p>
+     Get Mime Types:
+      <script type="text/javascript">
+        document.write(mimeTypes)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Font Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var font = "Times New Roman"; // Set Font String
+
+	var isFont = client.isFont(font); // Check For A Font
+
+	console.log( isFont );
+
+	</script>
+	<p>
+     Is Font ?:
+      <script type="text/javascript">
+        document.write(isFont)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var fonts = client.getFonts(); // Get Fonts
+
+	console.log( fonts );
+
+	</script>
+	<p>
+     Get Fonts:
+      <script type="text/javascript">
+        document.write(fonts)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Storage Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isLocalStorage = client.isLocalStorage(); // Check For Local Storage
+
+	console.log( isLocalStorage );
+
+	</script>
+	<p>
+     Is Local Storage ?:
+      <script type="text/javascript">
+        document.write(isLocalStorage)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isSessionStorage = client.isSessionStorage(); // Check For Session Storage
+
+	console.log( isSessionStorage );
+
+	</script>
+	<p>
+     Is Session Storage ?:
+      <script type="text/javascript">
+        document.write(isSessionStorage)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isCookie = client.isCookie(); // Check For Cookies
+
+	console.log( isCookie );
+
+	</script>
+	<p>
+     Are Cookies available ?:
+      <script type="text/javascript">
+        document.write(isCookie)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Time Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var timeZone = client.getTimeZone(); // Get Time Zone
+
+	console.log( timeZone );
+
+	</script>
+	<p>
+     Time Zone:
+      <script type="text/javascript">
+        document.write(timeZone)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Language Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var language = client.getLanguage(); // Get User Language
+
+	console.log( language );
+
+	</script>
+	<p>
+     User Language:
+      <script type="text/javascript">
+        document.write(language)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var systemLanguage = client.getSystemLanguage(); // Get System Language
+
+	console.log( systemLanguage );
+
+	</script>
+	<p>
+     System Language:
+      <script type="text/javascript">
+        document.write(systemLanguage)
+      </script>
+    </p>
+</div>
+<div class="w3-panel w3-pale-green">
+	<h3>Canvas Methods</h3>
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var isCanvas = client.isCanvas(); // Check For The Canvas Element
+
+	console.log( isCanvas );
+
+	</script>
+	<p>
+     Is Canvas ?:
+      <script type="text/javascript">
+        document.write(isCanvas)
+      </script>
+    </p>
+	
+	<script>
+
+	var client = new ClientJS(); // Create A New Client Object
+
+	var canvasPrint = client.getCanvasPrint(); // Get Canvas Print
+
+	console.log( canvasPrint );
+
+	</script>
+	<p>
+     Canvas Print: 
+	</br>
+	<img src="data:image/png;base64,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" />
+	</p>
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>
